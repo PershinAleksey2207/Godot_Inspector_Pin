@@ -348,6 +348,14 @@ func _mirror_property(property: StringName) -> void:
 	if current_root == null or current_root == source_root:
 		return  # The pinned node's own scene is on screen; it already redraws.
 
+	# A node deleted or reparented while pinned keeps pointing at its old owner
+	# but no longer sits under it, and get_path_to() then fails once per frame
+	# with "no path can be resolved ... they share no common ancestor". Being
+	# outside the scene tree is not itself the problem — that is the normal state
+	# of every node in a scene tab that is not the one on screen.
+	if source_root != pinned_node and not source_root.is_ancestor_of(pinned_node):
+		return
+
 	var relative := source_root.get_path_to(pinned_node)
 	var value: Variant = pinned_node.get(property)
 	for instance in _find_instances_of(current_root, source_path):
