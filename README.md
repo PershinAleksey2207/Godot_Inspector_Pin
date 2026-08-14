@@ -163,6 +163,20 @@ already correct because live preview updated it as the value changed.
 
 ## Known limitations
 
+- **A resource that belongs to another scene is read-only while you are here.**
+  This is Godot's own rule rather than the addon's. A built-in sub-resource — a
+  `ParticleProcessMaterial`, a `Gradient`, a `ShaderMaterial` kept inside its
+  scene instead of in its own file — greys out whenever a different scene is the
+  one being edited, because saving that scene would not record the change. The
+  node's own properties stay editable; only the fields inside the resource lock.
+
+  Particles are where this bites first: nearly everything worth tuning on a
+  `GPUParticles2D` lives in its process material. Fix it once, in the Inspector:
+  open the dropdown beside the resource, choose **Save As…**, and store it as a
+  `.tres` next to the scene. A resource in its own file belongs to no scene, so
+  it stays editable from any tab — and because every instance shares it, edits
+  land in the level as you make them, no pin required.
+
 - **Auto-save writes every open scene that has unsaved changes**, not only the
   pinned node's scene. That is the cost of not switching tabs; see above.
 - **The Save button never greys out on an unmodified scene.** Godot does not
