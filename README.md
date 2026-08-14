@@ -30,8 +30,28 @@ With Inspector Pin: open the building, pin the light, switch to the level tab
 once. **The viewport shows the level; the Inspector still shows the light.** Drag
 the slider and watch the real result.
 
-<!-- Replace with a short recording of the level viewport updating as a slider moves -->
 ![Tuning a light from another scene](docs/workflow.gif)
+
+### Why not Editable Children?
+
+Godot already lets you reach inside an instance: right-click it, switch on
+**Editable Children**, and its nodes become selectable in the level. For nudging
+one particular copy — moving a lamp a few pixels in this room only — that is
+exactly the right tool.
+
+It is the wrong tool for tuning the source. Everything you change there is stored
+as an **instance override in the level scene**, not in the scene you are actually
+trying to author. The building keeps its old light. So does every other level
+that uses it. Now the same value lives in five places and you get to remember
+which one is real.
+
+Switch it on across a project and the overrides accumulate quietly, until the
+source scene is no longer the source of truth and nobody is sure which scene to
+edit.
+
+Inspector Pin never opens the instance. You edit the node in its own scene, the
+value lands in the file it belongs to, and every instance of it — here and
+everywhere else — picks it up.
 
 ---
 
