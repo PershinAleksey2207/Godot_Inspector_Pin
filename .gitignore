@@ -1,0 +1,11 @@
+# Godot 4 editor data
+.godot/
+*.translation
+
+# Exported builds
+build/
+export_presets.cfg
+
+# OS cruft
+.DS_Store
+Thumbs.db
