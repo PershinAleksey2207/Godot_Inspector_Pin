@@ -9,8 +9,8 @@ you want — until you need to look at one scene while editing a node that lives
 in another. Then you are stuck bouncing between tabs, changing a value in one and
 checking the result in the other.
 
-Inspector Pin borrows the idea Houdini has had for years: **pin the panel to a
-node, and it stays there.**
+Inspector Pin adds the option that is missing: **pin the panel to a node, and it
+stays there.**
 
 That one change retires a whole workaround. You no longer switch on **Editable
 Children** just to reach a light buried inside an instanced scene. You tune that

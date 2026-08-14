@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-## Pins the Inspector to one object, the way Houdini pins a parameter pane.
+## Pins the Inspector to one object, so it stops following the selection.
 ##
 ## Three buttons are added to the Inspector header, left of the node-name
 ## dropdown:
