@@ -12,6 +12,16 @@ checking the result in the other.
 Inspector Pin borrows the idea Houdini has had for years: **pin the panel to a
 node, and it stays there.**
 
+That one change retires a whole workaround. You no longer switch on **Editable
+Children** just to reach a light buried inside an instanced scene. You tune that
+node's parameters under the level's real lighting, next to everything else that
+is actually in frame, and the result updates as you drag — no tab switching, no
+guessing how it will look once assembled.
+
+And because you are editing the node in its own scene rather than the copy sitting
+in the level, the value is written where it belongs. It reaches every instance of
+that scene, instead of being buried in this one level as an override.
+
 ![The three buttons in the Inspector header](docs/header.png)
 
 ---
