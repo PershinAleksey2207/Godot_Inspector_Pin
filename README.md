@@ -4,6 +4,8 @@
 
 ![Godot 4.x](https://img.shields.io/badge/Godot-4.x-478cbf) ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
+![Inspector Pin](docs/promo.png)
+
 The Inspector always shows whatever is selected right now. That is usually what
 you want — until you need to look at one scene while editing a node that lives
 in another. Then you are stuck bouncing between tabs, changing a value in one and
