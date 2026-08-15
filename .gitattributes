@@ -1,0 +1,18 @@
+# Keep the Asset Library download to the addon and nothing else.
+#
+# The AssetLib installer unpacks the repository archive straight into the
+# user's project, so anything living outside addons/ would land next to their
+# project.godot. Everything listed below exists for the GitHub page and the
+# Asset Store listing — the docs folder alone is over 2 MB of promo images —
+# and has no business in someone else's project. export-ignore keeps these
+# files in the repository while dropping them from the generated archive.
+#
+# The addon carries its own copies of README.md and LICENSE, so the download
+# stays self-contained.
+
+/.gitattributes export-ignore
+/.gitignore     export-ignore
+/README.md      export-ignore
+/LICENSE        export-ignore
+/icon.png       export-ignore
+/docs           export-ignore
